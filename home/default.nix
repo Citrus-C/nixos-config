@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
-
 {
   imports = [
     ./core.nix
-    ./home.nix
-    ./vscode.nix
+    ./cli.nix
+    ./gui.nix
+    ./zsh.nix
+    ./editor.nix
+    ./other.nix
   ];
 }

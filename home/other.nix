@@ -1,31 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  home.username = "fall_dust";
-  home.homeDirectory = "/home/fall_dust";
-
   # 通过 home.packages 安装一些常用的软件
   # 这些软件将仅在当前用户下可用，不会影响系统级别的配置
   # 建议将所有 GUI 软件，以及与 OS 关系不大的 CLI 软件，都通过 home.packages 安装
-  home.packages = with pkgs;[
-    fastfetch
-
-    # chat Tools
-    telegram-desktop
-    ayugram-desktop
-    qq
-    wechat
-
-    # editor tools
-    zed-editor
-
-    # browser
-    brave
-    chromium
-
+  home.packages = with pkgs; [
     # other
-    localsend
-
     swaybg
     waypaper
     hyprlock
@@ -41,13 +21,6 @@
     gnome-themes-extra
 
   ];
-
-  # git 相关配置
-  programs.git = {
-    enable = true;
-    userName = "Citrus-C";
-    userEmail = "lemon-c74@outlook.com";
-  };
 
   # 调整亮度音量显示
   services.avizo.enable = true;
@@ -81,6 +54,4 @@
 
 #   # 让大部分 gtk 软件选暗色主题
 #   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-
-  home.stateVersion = "25.05";
 }
