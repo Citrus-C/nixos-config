@@ -46,6 +46,8 @@
 
   i18n.inputMethod = {
     enable = true;
+
+    # fcitx5
     type = "fcitx5";
     fcitx5.addons = with pkgs; [
       fcitx5-rime
@@ -54,11 +56,11 @@
       fcitx5-configtool
     ];
 
-#       # ibus
-#     type = "ibus";
-#     ibus.engines = with pkgs.ibus-engines; [
-#       libpinyin
-#       rime
-#     ];
+    # ibus
+    # type = "ibus";
+    # ibus.engines = with pkgs.ibus-engines; [
+    #   libpinyin
+    #   rime
+    # ];
   };
 }

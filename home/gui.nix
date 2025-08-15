@@ -10,8 +10,6 @@
     telegram-desktop
     ayugram-desktop
     deltachat-desktop
-    qq
-    wechat
 
     # other
     localsend

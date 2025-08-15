@@ -16,8 +16,6 @@
     bottles
     heroic
     dmidecode
-    # gui-for-clash
-    # gui-for-singbox
-    # lutris
+    tree
   ];
 }

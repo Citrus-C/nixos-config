@@ -4,10 +4,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    daeuniverse.url = "github:daeuniverse/flake.nix";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    daeuniverse.url = "github:daeuniverse/flake.nix"; # dae
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {

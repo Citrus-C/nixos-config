@@ -7,31 +7,33 @@
 {
   imports =
     [ 
-      # 🖥️ 硬件相关
+      # hardware
       ./hardware-configuration.nix
       ../../modules/hardware/nvidia.nix
       ../../modules/hardware/zram.nix
 
-      # ⚙️ 系统基础配置
+      # System config
+      ../../modules/base/fonts.nix
       ../../modules/base/locale.nix
       ../../modules/base/network.nix
       ../../modules/base/nix.nix
       ../../modules/boot.nix
 
-      # 🖼️ 桌面环境与美化
-      ../../modules/desktop/kde.nix
-      ../../modules/desktop/fonts.nix
+      # Desktop
+      # ../../modules/desktop/kde.nix
+      ../../modules/desktop/niri.nix
 
-      # 📦 程序与应用
+      # Programs
       ../../modules/programs/appimage.nix
       ../../modules/programs/packages.nix
       ../../modules/programs/steam.nix
 
-      # 🔧 服务
+      # Service
       ../../modules/services/dae.nix
       ../../modules/services/daed.nix
+      ../../modules/services/ssh.nix
 
-      # 👤 用户配置
+      # User
       ../../modules/user.nix
 
     ];
@@ -59,20 +61,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
