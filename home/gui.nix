@@ -2,7 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    #browsers
+    # terminal
+    alacritty
+
+    # browsers
     brave
     chromium
 
