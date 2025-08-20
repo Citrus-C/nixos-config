@@ -2,41 +2,24 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ 
-      # hardware
-      ./hardware-configuration.nix
-      ../../modules/hardware/nvidia.nix
-      ../../modules/hardware/zram.nix
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/hardware
+    ../../modules/base
+    ../../modules/desktop
+    ../../modules/programs
+    ../../modules/services
+    ../../modules/user.nix
 
-      # System config
-      ../../modules/base/fonts.nix
-      ../../modules/base/locale.nix
-      ../../modules/base/network.nix
-      ../../modules/base/nix.nix
-      ../../modules/boot.nix
-
-      # Desktop
-      # ../../modules/desktop/kde.nix
-      ../../modules/desktop/niri.nix
-
-      # Programs
-      ../../modules/programs/appimage.nix
-      ../../modules/programs/packages.nix
-      ../../modules/programs/steam.nix
-
-      # Service
-      ../../modules/services/dae.nix
-      ../../modules/services/daed.nix
-      ../../modules/services/ssh.nix
-
-      # User
-      ../../modules/user.nix
-
-    ];
+  ];
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -82,4 +65,3 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-

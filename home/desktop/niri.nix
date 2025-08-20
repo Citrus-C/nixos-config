@@ -1,17 +1,6 @@
 {config, pkgs, ...}:
 
 {
-  xdg.configFile = {
-    # "kitty".source = ../dotfiles/kitty;
-    # "kanshi".source = ../dotfiles/kanshi;
-    # "swaylock".source = ../dotfiles/swaylock;
-
-    "niri".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/dotfiles/niri";
-    # "sway".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/dotfiles/sway";
-    # "hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/dotfiles/hypr/hyprland.conf";
-  };
-  # xdg.configFile."niri/config.kdl".source = ./config.kdl;
-
   # 调整亮度音量显示
   services.avizo.enable = true;
 
@@ -30,17 +19,6 @@
     sunrise = "07:00";
   };
 
-  # 壁纸软件
-  services.wpaperd = {
-    enable = true;
-    settings = {
-      default = {
-        duration = "30m";
-        mode = "center";
-      };
-      any.path = "${config.home.homeDirectory}/Pictures/Wallpapers";
-    };
-  };
 
   # 让大部分 gtk 软件选暗色主题
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
@@ -55,7 +33,6 @@
     wlogout
     wlsunset
     fuzzel
-    waybar
     uwsm
     xwayland-satellite
     adwaita-icon-theme

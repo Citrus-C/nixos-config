@@ -1,10 +1,10 @@
 {
   imports = [
     ./core.nix
-    ./cli.nix
-    ./desktop/niri.nix
-    ./editor.nix
-    ./gui.nix
+    ./desktop
+    ./editor
+    ./programs
+    ./xdg.nix
     ./zsh.nix
   ];
 }

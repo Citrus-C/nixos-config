@@ -10,12 +10,29 @@
     whois
     lshw
     smartmontools
-    libreoffice
     parted
-    unrar
     bottles
     heroic
     dmidecode
+    nix-ld
     tree
+    icu
+
+    # office
+    libreoffice
+
+    # unzip
+    p7zip
+    unrar
+    unzip
+
+    ffmpeg-full
+    openh264
+    gst_all_1.gst-libav
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-ugly
+    
+    brightnessctl
+    power-profiles-daemon
   ];
 }

@@ -1,13 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, ...}:
 
 {
-  home.packages = with pkgs; [ 
-    zed-editor
-
-    nil
-    nixpkgs-fmt
-];
-
   programs.vscode = {
     enable = true;
 
@@ -27,4 +20,9 @@
       "nix.formatterPath" = "nixpkgs-fmt";
     };
   };
+
+  home.packages = with pkgs; [ 
+    nil
+    nixpkgs-fmt
+];
 }
