@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   programs.niri.enable = true;
@@ -32,34 +32,41 @@
   # 磁盘挂载
   services.gvfs.enable = true;
 
+  # 缩略图生成服务
+  services.tumbler.enable = true;
+
+  # 保存 Thunar 偏好设置
+  programs.xfconf.enable = true;
+
   # 压缩解压
   programs.file-roller.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # nvidia
-  environment.etc."nvidia/nvidia-application-profiles-rc.d/50-limit-free-buffer-pool-in-wayland-compositors.json".text = ''
-    {
-      "rules": [
-        {
-          "pattern": {
-            "feature": "procname",
-            "matches": "niri"
-          },
-          "profile": "Limit Free Buffer Pool On Wayland Compositors"
-        }
-      ],
-      "profiles": [
-        {
-          "name": "Limit Free Buffer Pool On Wayland Compositors",
-          "settings": [
-            {
-              "key": "GLVidHeapReuseRatio",
-              "value": 0
-            }
-          ]
-        }
-      ]
-    }
-  '';
+  environment.etc."nvidia/nvidia-application-profiles-rc.d/50-limit-free-buffer-pool-in-wayland-compositors.json".text =
+    ''
+      {
+        "rules": [
+          {
+            "pattern": {
+              "feature": "procname",
+              "matches": "niri"
+            },
+            "profile": "Limit Free Buffer Pool On Wayland Compositors"
+          }
+        ],
+        "profiles": [
+          {
+            "name": "Limit Free Buffer Pool On Wayland Compositors",
+            "settings": [
+              {
+                "key": "GLVidHeapReuseRatio",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      }
+    '';
 }

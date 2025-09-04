@@ -25,4 +25,10 @@
   };
 
   boot.kernelParams = [ "modprobe.blacklist=nouveau" ];
+
+  # 启用 Wayland 支持（可选但推荐）
+  environment.sessionVariables = {
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    WLR_NO_HARDWARE_CURSORS = "1"; # 某些情况下可解决光标问题
+  };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   programs.vscode = {
@@ -21,8 +21,8 @@
     };
   };
 
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
     nil
     nixpkgs-fmt
-];
+  ];
 }

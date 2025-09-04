@@ -1,7 +1,6 @@
 {
   imports = [
-    ./dae.nix
-    ./daed.nix
+    ./proxy.nix
     ./ssh.nix
   ];
 }
